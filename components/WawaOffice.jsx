@@ -17,4 +17,4 @@ export function Office(props) {
   )
 }
 
-useGLTF.preload('/WawaOffice.glb')
+useGLTF.preload('./models/WawaOffice.glb')
