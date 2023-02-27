@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import "./App.css";
-import { Experience } from "/components/Experience";
+import { Experience } from "/src/components/Experience";
 
 function App() {
   return (

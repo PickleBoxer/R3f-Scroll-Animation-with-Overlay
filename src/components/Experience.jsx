@@ -7,8 +7,8 @@ import {
   ScrollControls,
   CameraControls,
 } from "@react-three/drei";
-import { Office } from "/components/WawaOffice";
-import { Overlay } from "/components/Overlay";
+import { Office } from "/src/components/WawaOffice";
+import { Overlay } from "/src/components/Overlay";
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react'
 import { useControls, button, buttonGroup, folder } from 'leva';
