@@ -46,15 +46,23 @@ const PageNotFound = () => {
   );
 };
 
+// This code is used to create an overlay effect on the page based on scroll position. It uses the useScroll, useState and useFrame React Hooks.
 export const Overlay = () => {
+  // useScroll gets the current user position in the viewport
   const scroll = useScroll();
+
+  // useState sets the opacity of each section to be 1 by default
   const [opacityFirstSection, setOpacityFirstSection] = useState(1);
   const [opacitySecondSection, setOpacitySecondSection] = useState(1);
   const [opacityLastSection, setOpacityLastSection] = useState(1);
 
+  // useFrame is called on each frame
   useFrame(() => {
+    // setOpacityFirstSection sets the opacity of the first section from range 0-1/3
     setOpacityFirstSection(1 - scroll.range(0, 1 / 3));
+    // setOpacitySecondSection curves the opacity of the second section for smoother transition between two points
     setOpacitySecondSection(scroll.curve(1 / 3, 1 / 3));
+    // setOpacityLastSection sets the opacity of the last section from range 2/3-1
     setOpacityLastSection(scroll.range(2 / 3, 1 / 3));
   });
 
@@ -62,6 +70,7 @@ export const Overlay = () => {
     <Scroll html>
       {/* DOM contents in here will scroll along https://github.com/pmndrs/drei#scrollcontrols */}
       <div className="w-screen">
+        {/* The opacity prop of each <Section> component is assigned the corresponding opacity* state. */}
         <Section opacity={opacityFirstSection}>
           <PageNotFound />
         </Section>
