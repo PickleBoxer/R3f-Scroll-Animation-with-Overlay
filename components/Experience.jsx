@@ -8,6 +8,7 @@ import {
   CameraControls,
 } from "@react-three/drei";
 import { Office } from "/components/WawaOffice";
+import { Overlay } from "/components/Overlay";
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react'
 import { useControls, button, buttonGroup, folder } from 'leva';
@@ -157,8 +158,10 @@ export const Experience = () => {
         {/* Office Component 3D Model */}
         <mesh ref={meshRef}>
           <Office />
-        </mesh> 
+        </mesh>
+        <Overlay />
       </ScrollControls>
+      {/*/ A camera control for three.js */}
       <CameraControls
           ref={cameraControlsRef}
           minDistance={minDistance}
